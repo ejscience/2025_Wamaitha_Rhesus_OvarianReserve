@@ -7,6 +7,7 @@ This project is focused on running a full mixed probe analysis, as detailed in t
 `20231202_MixedProbesFullRun` : The HTML document contains the full experimental run and includes the following sections
 
 ## File Structure
+```
 2024_Wamaitha_Rhesus_OvarianReserve/
 ├── README.md
 ├── spaceranger_array_submission.sh
@@ -21,7 +22,7 @@ This project is focused on running a full mixed probe analysis, as detailed in t
 │       ├── FRP_Human_probes_on_Macaque_2.csv
 │       ├── FRP_Human_probes_on_Macaque_3.csv
 │       └── FRP_Human_probes_on_Macaque_4.csv
-
+```
 - Folder `UpdatedSpaceRanger` contains the files below which will make the probe set list to align the data.
     - `UpdatedSpaceRanger/MakingSingleProbes.R`: This is the file that will be run first to make the single hits of the Rhesus Mulatta using human probes
     - `UpdatedSpaceRanger/MakingMixedProbes.sh`: This is the file that will then take the single hits and add in the mixed probes
