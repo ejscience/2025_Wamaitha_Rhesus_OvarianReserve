@@ -3,11 +3,16 @@ Github for Wamaitha, S. article: "Defining the cell and molecular origins of the
 
 ## Overview
 
-This project is focused on running a full mixed probe analysis, as detailed in the `20231202_MixedProbesFullRun.nb.html` file. The HTML document contains the full experimental run and includes the following sections:
+This project is focused on running a full mixed probe analysis, as detailed in the `20231202_MixedProbesFullRun.nb.html` file. 
+`20231202_MixedProbesFullRun` : The HTML document contains the full experimental run and includes the following sections
 
 ## File Structure
 
-- `20231202_MixedProbesFullRun.nb.html`: The main output of the analysis, generated using a notebook. This file contains the detailed steps, code, and results from the experiment.
+- `MakingMixedProbes.sh`: This is the file
+- `MakingSingleProbes.R`: This is the file that
+- 
+- `20231202_MixedProbesFullRun.nb.html`: The main output of the analysis, generated using the notebook `20231202_MixedProbesFullRun.Rmd`. This file contains the detailed steps, code, and results from the experiment.
+- 
 
 ## Usage
 
