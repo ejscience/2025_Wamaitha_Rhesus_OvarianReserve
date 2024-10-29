@@ -37,9 +37,11 @@ This project is focused on running a full mixed probe analysis, as detailed in t
     - Clone the repository.
     - Start by running the file `UpdatedSpaceRanger/MakingSingleProbes.R` and `UpdatedSpaceRanger/MakingMixedProbes.sh`. These will make the probe lists that will be used in spaceranger
     - Then follow the steps in our `spaceranger_array_submission.sh` to include the correct probe list to your spaceranger submission.
-    - Take your 
-    - Follow the code snippets in the `Methods` section to set up the experimental environment and run your own version of the analysis.
-    - Ensure all required libraries and dependencies are installed, these are at the end in the SessionInfo() of the HTML `20231202_MixedProbesFullRun.nb.html` or see below.
+    - Take your output from `spaceranger` in the `/outs/` folder to the next step
+    - Follow the Methods section of the paper to set up the experimental environment and run your own version of the analysis in conjunction with this repository
+        - Ensure all required libraries and dependencies are installed, these are at the end in the SessionInfo() of the HTML `20231202_MixedProbesFullRun.nb.html` or see below.
+    - Use the code from RMarkdown file `20231202_MixedProbesFullRun.Rmd` to get the full sized images from the paper
+        - Please note that to make the images black and white we used ImageJ to turn the image to non-RGB. This is stated in the Methods and the `.Rmd` file.
 
 ## Requirements
 
@@ -126,4 +128,4 @@ For any questions or further information, feel free to reach out to the project 
 
 ---
 
-*Updated on: October 21 2024*
+*Updated on: October 29 2024*
