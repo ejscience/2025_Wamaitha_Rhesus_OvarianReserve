@@ -10,6 +10,7 @@ This project is focused on running a full mixed probe analysis, as detailed in t
 ```
 2024_Wamaitha_Rhesus_OvarianReserve/
 ├── README.md
+├── VisiumHD.sh
 ├── spaceranger_array_submission.sh
 ├── 20231202_MixedProbesFullRun.nb.html
 ├── UpdatedSpaceRanger/
@@ -26,6 +27,7 @@ This project is focused on running a full mixed probe analysis, as detailed in t
 - Folder `UpdatedSpaceRanger` contains the files below which will make the probe set list to align the data.
     - `UpdatedSpaceRanger/MakingSingleProbes.R`: This is the file that will be run first to make the single hits of the Rhesus Mulatta using human probes
     - `UpdatedSpaceRanger/MakingMixedProbes.sh`: This is the file that will then take the single hits and add in the mixed probes
+    - `VisiumHD.sh` is the script to make the VisiumHD alignments
     - The rest of the `.csv` files are the probes that were added from running the above files. And the folder `UpdatedSpaceRanger/RhesusMacaqueProbeLists` contains the 10X genomics hits that they found.
 - `spaceranger_array_submission.sh`: This is the script to run spaceranger on a cluster but clearly shows how to integrate the new probe set.
 - `20231202_MixedProbesFullRun.nb.html`: The main output of the analysis, generated using the notebook `20231202_MixedProbesFullRun.Rmd`. This file contains the detailed steps, code, and results from the experiment.
@@ -37,6 +39,7 @@ This project is focused on running a full mixed probe analysis, as detailed in t
     - Clone the repository.
     - Start by running the file `UpdatedSpaceRanger/MakingSingleProbes.R` and `UpdatedSpaceRanger/MakingMixedProbes.sh`. These will make the probe lists that will be used in spaceranger
     - Then follow the steps in our `spaceranger_array_submission.sh` to include the correct probe list to your spaceranger submission.
+        - Note: If you are trying to run VisiumHD results, please use `VisiumHD.sh`
     - Take your output from `spaceranger` in the `/outs/` folder to the next step
     - Follow the Methods section of the paper to set up the experimental environment and run your own version of the analysis in conjunction with this repository
         - Ensure all required libraries and dependencies are installed, these are at the end in the SessionInfo() of the HTML `20231202_MixedProbesFullRun.nb.html` or see below.
