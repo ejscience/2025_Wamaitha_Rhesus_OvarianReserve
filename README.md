@@ -54,20 +54,29 @@ This project is focused on running a full mixed probe analysis, as detailed in t
 ## Usage
 
 1. **Viewing Results**: Open the `20231202_MixedProbesFullRun.nb.html` file in any web browser to view the interactive analysis, which includes plots and tables.
-2. **Reproducing Analysis**:
+2. **Preparing for Reproducing Analysis**: 
     - Clone the repository.
     - Start by running the file `UpdatedSpaceRanger/MakingSingleProbes.R` and `UpdatedSpaceRanger/MakingMixedProbes.sh`. These will make the probe lists that will be used in spaceranger
     - Then follow the steps in our `spaceranger_array_submission.sh` to include the correct probe list to your spaceranger submission.
         - Note: If you are trying to run VisiumHD results, please use `VisiumHD.sh`
     - Take your output from `spaceranger` in the `/outs/` folder to the next step
+3. **Running Analysis for Marker Gene DotPlots in Visium**
     - Follow the Methods section of the paper to set up the experimental environment and run your own version of the analysis in conjunction with this repository
         - Ensure all required libraries and dependencies are installed, these are at the end in the SessionInfo() of the HTML `20231202_MixedProbesFullRun.nb.html` or see below.
     - Use the code from RMarkdown file `20231202_MixedProbesFullRun.Rmd` to get the full sized images from the paper
         - Please note that to make the images black and white we used ImageJ to turn the image to non-RGB. This is stated in the Methods and the `.Rmd` file.
+4. **Running Analysis for Differential Gene Expression (DGE) in Visium**
+    - Follow the Methods section to set up the experimental environment and run your own version of the analysis in conjunction with this repository.
+    - Use the code as set up in folder `/Codes_Visium/`
+        - here you will find code that starts with `Comparison_...` these are code blocks for comparing the different samples for finding DGE across the samples.
+        - The code that is describing just the different `EMB_...` or `Testis_...` will be used for finding marker genes for each cell type population across the cells in one sample  
+5.  **Running Analysis for all CosMX Data**
+    -  Follow the Methods section to set up the experimental environment and run your own version of the analysis in conjunction with this repository.
+    -  Use the code set up in folder `/Codes_CosMX/` where each embryo is grouped by their identity as `..._Embryo_1` and `..._Embryo_2`. See the paper's methods for details about the embryos
 
 ## Requirements
 
-To rerun the analysis, make sure the following dependencies are installed:
+To rerun the analysis, make sure the following dependencies are installed for the Visium Marker Gene Visualization:
 ```
 sessionInfo()
 R version 4.3.0 (2023-04-21)
@@ -143,11 +152,19 @@ loaded via a namespace (and not attached):
 [176] rlang_1.1.4               spatstat.sparse_3.1-0     spatstat.explore_3.3-2    fansi_1.0.6               Cairo_1.6-2              
 [181] beeswarm_0.4.0   
 ```
+To rerun the analysis, make sure the following dependencies are installed for the Visium DGE:
+```
+TBD
+```
 
+To rerun the analysis, make sure the following dependencies are installed for the CosMX analysis:
+```
+TBD
+```
 ## Contact
 
 For any questions or further information, feel free to reach out to the project lead.
 
 ---
 
-*Updated on: October 29 2024*
+*Updated on: December 11 2024*
