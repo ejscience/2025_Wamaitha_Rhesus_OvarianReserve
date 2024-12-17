@@ -48,12 +48,11 @@ emb020 <- Load10X_Spatial(data.dir = "/mnt/newusb/rojas/spatialtranscriptomics/s
 emb021 <- Load10X_Spatial(data.dir = "/mnt/newusb/rojas/spatialtranscriptomics/spaceranger_outs/RhMa_spacerangerOuts-MIXEDprobes/emb021/outs/")
 emb022 <- Load10X_Spatial(data.dir = "/mnt/newusb/rojas/spatialtranscriptomics/spaceranger_outs/RhMa_spacerangerOuts-MIXEDprobes/emb022/outs/")
 emb029 <- Load10X_Spatial(data.dir = "/mnt/newusb/rojas/spatialtranscriptomics/spaceranger_outs/RhMa_spacerangerOuts-MIXEDprobes/emb029/outs/")
-emb177 <- Load10X_Spatial(data.dir = "/mnt/newusb/rojas/spatialtranscriptomics/spaceranger_outs/RhMa_spacerangerOuts-MIXEDprobes/emb177/outs/")
 emb031 <- Load10X_Spatial(data.dir = "/mnt/newusb/rojas/spatialtranscriptomics/spaceranger_outs/RhMa_spacerangerOuts-MIXEDprobes/emb031/outs/")
 emb032 <- Load10X_Spatial(data.dir = "/mnt/newusb/rojas/spatialtranscriptomics/spaceranger_outs/RhMa_spacerangerOuts-MIXEDprobes/emb032/outs/")
 
 # Create a list of Seurat objects
-seurat_objects <- list(emb019, emb020, emb021, emb022, emb029, emb177, emb031, emb032) 
+seurat_objects <- list(emb019, emb020, emb021, emb022, emb029, emb031, emb032) 
 
 # Loop through each object and plot
 for (seurat_obj in seurat_objects) {
@@ -124,44 +123,20 @@ emb020 <- DefaultSeuratProcessing(emb020)
 emb021 <- DefaultSeuratProcessing(emb021)
 emb022 <- DefaultSeuratProcessing(emb022)
 emb029 <- DefaultSeuratProcessing(emb029)
-emb177 <- DefaultSeuratProcessing(emb177)
 emb031 <- DefaultSeuratProcessing(emb031)
 emb032 <- DefaultSeuratProcessing(emb032)
 
 ```
 # Defining the gene set lists 
 
-I used the gene set lists from Sissy see below:
+I used the gene set list below:
 
-- Germ_cells = c("DDX4", "DAZL", "NANOG", "POU5F1", "PRDM1", "SMC1B", "SOX17", "SYCP3", "TFAP2C", "NANOS3", "ZP3"),
-- Early_progenitor = c("GATA2", "GATA3", "NR2F2", "PDGFRA", "DCN", "TCF21"),
-- Granulosa = c("FOXL2", "KRT18", "KRT19", "LHX2", "LHX9", "NR1H4", "UPK3B", "WNT6", "AMH", "FSHR"),
-- Early_granulosa = c("LGR5", "NR5A1", "OSR1", "RUNX1", "TAC1", "TSPAN8"),
-- Theca = c("CYP17A1", "ASPN", "INSL3"), **NOTE: I used ASPN as you mentioned "PLAP1" in parenthesis, correct this if needed**
-- Endothelial = c("HEY1", "KDR", "VWF", "PECAM1"),
-- Macrophage = c("CD14", "CD68", "MARCO"),
-- NKT_cells = c("CD3D", "KLRB1", "ZBTB16"),
-- Smooth_muscle_cells = c("ACTA2", "CNN1", "MYLK4"),
-- Other_GeneSet = c("AMHR2", "NR0B1", "STAR", "DPPA4", "LIN28A", "KISS1", "CRYM", "GREB1", "DUOX2", "UTF1", "GSTA3")
-- Newest_Geneset = c("PAX8", "GATM", "GREB1")
+gene_sets <- list("DDX4", "FOXL2", "NR2F2", "WNT6", "LHX9", "EMX2", "NR5A1", "NR0B1", "AMHR2", "GREB1", "GATM", "IFI6", "CYP17A1", "GATA2", "RUNX1", "PAX8")
 
 ```{r}
 
 # Define your gene sets
-gene_sets <- list(
-  Germ_cells = c("DDX4", "DAZL", "NANOG", "POU5F1", "PRDM1", "SMC1B", "SOX17", "SYCP3", "TFAP2C", "NANOS3", "ZP3"),
-  Early_progenitor = c("GATA2", "GATA3", "NR2F2", "PDGFRA", "DCN", "TCF21"),
-  Granulosa = c("FOXL2", "KRT18", "KRT19", "LHX2", "LHX9", "NR1H4", "UPK3B", "WNT6", "AMH", "FSHR"),
-  Early_granulosa = c("LGR5", "NR5A1", "OSR1", "RUNX1", "TAC1", "TSPAN8"),
-  Theca = c("CYP17A1", "ASPN", "INSL3"), # Note: I used ASPN as you mentioned "PLAP1" in parenthesis, correct this if needed
-  Endothelial = c("HEY1", "KDR", "VWF", "PECAM1"),
-  Macrophage = c("CD14", "CD68", "MARCO"),
-  NKT_cells = c("CD3D", "KLRB1", "ZBTB16"),
-  Smooth_muscle_cells = c("ACTA2", "CNN1", "MYLK4"),
-  Other_GeneSet = c("AMHR2", "NR0B1", "STAR", "DPPA4", "LIN28A", "KISS1", "CRYM", "GREB1", "DUOX2", "UTF1", "GSTA3"),
-  Newest_Geneset = c("PAX8", "GATM", "GREB1","FOXL2"),
-  More_New_Geneset = c("EMX2", "IFI6", "SOX9", "SRY", "GATA4")
-)
+gene_sets <- list("DDX4", "FOXL2", "NR2F2", "WNT6", "LHX9", "EMX2", "NR5A1", "NR0B1", "AMHR2", "GREB1", "GATM", "IFI6", "CYP17A1", "GATA2", "RUNX1", "PAX8")
 ```
 
 # Loop for the generation of the figures. 
@@ -176,7 +151,7 @@ if (!dir.exists(output_dir)) {
 }
 
 # List of embryos to process
-embryos <- list(emb019 = emb019, emb020 = emb020, emb021 = emb021, emb022 = emb022, emb029 = emb029, emb177 = emb177, emb031 = emb031, emb032 = emb032)
+embryos <- list(emb019 = emb019, emb020 = emb020, emb021 = emb021, emb022 = emb022, emb029 = emb029, emb031 = emb031, emb032 = emb032)
 
 
 # Loop through the embryos
@@ -244,10 +219,5 @@ print(p)
 
 ```{r}
 sessionInfo()
-```
-
-
-```{r}
-
 ```
 
