@@ -5,14 +5,14 @@
 #SBATCH --export=NONE
 #SBATCH -o /c4/home/erojas/logs/job.%A_%a.out
 #SBATCH --error=/c4/home/erojas/logs/job.%A_%a.err
-#SBATCH --array=1-6
+#SBATCH --array=1-5
 
 cd /c4/home/erojas
 
 export PATH=/c4/home/erojas/software/spaceranger-2.1.0/bin:$PATH
 
 # Array of IDs
-declare -a IDs=("emb021" "emb020" "emb019" "emb022" "emb029" "emb177")
+declare -a IDs=("emb021" "emb020" "emb019" "emb022" "emb029")
 
 # Array of fastq paths
 declare -a Fastqs=(
@@ -21,11 +21,10 @@ declare -a Fastqs=(
     "/c4/home/erojas/data/sptr/spatialtranscriptomics/fastq/RhMa_20231103/Rh-SpTr/Rh-SpTr-d41_019"
     "/c4/home/erojas/data/sptr/spatialtranscriptomics/fastq/RhMa_20231103/Rh-SpTr/Rh-SpTr-d41_022"
     "/c4/home/erojas/data/sptr/spatialtranscriptomics/fastq/RhMa_20231103/Rh-SpTr/Rh-SpTr-d41_029"
-    "/c4/home/erojas/data/sptr/spatialtranscriptomics/fastq/RhMa_20231103/Rh-SpTr/Rh-SpTr-d41_177"
 )
 
 # Array of sample names
-declare -a Samples=("Rh-SpTr-d41_021" "Rh-SpTr-d41_020" "ONPRC019" "ONPRC022" "ONPRC029" "ONPRC177")
+declare -a Samples=("Rh-SpTr-d41_021" "Rh-SpTr-d41_020" "ONPRC019" "ONPRC022" "ONPRC029")
 
 # Array of cytaimage paths
 declare -a Cytaimages=(
@@ -34,7 +33,6 @@ declare -a Cytaimages=(
     "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb019-022-029-177_images/emb019/emb019_cytaimage.tif"
     "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb019-022-029-177_images/emb022/emb022_cytaimage.tif"
     "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb019-022-029-177_images/emb029/emb029_cytaimage.tif"
-    "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb019-022-029-177_images/emb177/emb177_cytaimage.tif"
 )
 
 # Array of image paths
@@ -44,7 +42,6 @@ declare -a Images=(
     "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb019-022-029-177_images/emb019/emb019_slice3_image.tif"
     "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb019-022-029-177_images/emb022/emb022_slice2_image.tif"
     "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb019-022-029-177_images/emb029/emb029_slice2_image.tif"
-    "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb019-022-029-177_images/emb177/emb177_slice3_image.tif"
 )
 
 # Array of loupe-alignment paths
@@ -54,14 +51,13 @@ declare -a LoupeAlignments=(
     "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb019-022-029-177_images/emb019/emb019_cytassist_alignment.json"
     "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb019-022-029-177_images/emb022/emb022_cytassist_alignment.json"
     "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb019-022-029-177_images/emb029/emb029_cytassist_alignment.json"
-    "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb019-022-029-177_images/emb177/emb177_cytassist_alignment.json"
 )
 
 # Array of slide values
-declare -a Slides=("V43J23-062" "V43J23-062" "V43J31-387" "V43J31-387" "V43J31-300" "V43J31-300")
+declare -a Slides=("V43J23-062" "V43J23-062" "V43J31-387" "V43J31-387" "V43J31-300")
 
 # Array of Slide Areas
-declare -a Areas=("A1" "D1" "D1" "A1" "D1" "A1")
+declare -a Areas=("A1" "D1" "D1" "A1" "D1" )
 
 # Select parameters based on SLURM_ARRAY_TASK_ID
 ID=${IDs[$SLURM_ARRAY_TASK_ID-1]}
