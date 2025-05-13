@@ -18,39 +18,39 @@ declare -a IDs=("emb021" "emb020" "emb019" "emb022" "emb029")
 declare -a Fastqs=(
     "/c4/home/erojas/data/sptr/spatialtranscriptomics/fastq/RhMa_20230726/Rh-SpTr/emb021"
     "/c4/home/erojas/data/sptr/spatialtranscriptomics/fastq/RhMa_20230726/Rh-SpTr/emb020"
-    "/c4/home/erojas/data/sptr/spatialtranscriptomics/fastq/RhMa_20231103/Rh-SpTr/Rh-SpTr-d41_019"
-    "/c4/home/erojas/data/sptr/spatialtranscriptomics/fastq/RhMa_20231103/Rh-SpTr/Rh-SpTr-d41_022"
-    "/c4/home/erojas/data/sptr/spatialtranscriptomics/fastq/RhMa_20231103/Rh-SpTr/Rh-SpTr-d41_029"
+    "/c4/home/erojas/data/sptr/spatialtranscriptomics/fastq/RhMa_20231103/Rh-SpTr/emb019"
+    "/c4/home/erojas/data/sptr/spatialtranscriptomics/fastq/RhMa_20231103/Rh-SpTr/emb022"
+    "/c4/home/erojas/data/sptr/spatialtranscriptomics/fastq/RhMa_20231103/Rh-SpTr/emb029"
 )
 
 # Array of sample names
-declare -a Samples=("Rh-SpTr-d41_021" "Rh-SpTr-d41_020" "ONPRC019" "ONPRC022" "ONPRC029")
+declare -a Samples=("ONPRC021" "ONPRC020" "ONPRC019" "ONPRC022" "ONPRC029")
 
 # Array of cytaimage paths
 declare -a Cytaimages=(
-    "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb020-021_images/images_emb020-021/emb021/embryo021_cytaimage.tif"
-    "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb020-021_images/images_emb020-021/emb020/embryo020_cytaimage.tif"
-    "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb019-022-029-177_images/emb019/emb019_cytaimage.tif"
-    "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb019-022-029-177_images/emb022/emb022_cytaimage.tif"
-    "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb019-022-029-177_images/emb029/emb029_cytaimage.tif"
+    "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb020-021_images/images_emb020-021/emb021/emb021_cytaimage.tif"
+    "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb020-021_images/images_emb020-021/emb020/emb020_cytaimage.tif"
+    "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb019-022-029_images/emb019/emb019_cytaimage.tif"
+    "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb019-022-029_images/emb022/emb022_cytaimage.tif"
+    "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb019-022-029_images/emb029/emb029_cytaimage.tif"
 )
 
 # Array of image paths
 declare -a Images=(
-    "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb020-021_images/images_emb020-021/emb021/embryo021_slice2_image.tif"
-    "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb020-021_images/images_emb020-021/emb020/embryo020_slice3_image.tif"
-    "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb019-022-029-177_images/emb019/emb019_slice3_image.tif"
-    "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb019-022-029-177_images/emb022/emb022_slice2_image.tif"
-    "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb019-022-029-177_images/emb029/emb029_slice2_image.tif"
+    "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb020-021_images/images_emb020-021/emb021/emb021_slice2_image.tif"
+    "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb020-021_images/images_emb020-021/emb020/emb020_slice3_image.tif"
+    "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb019-022-029_images/emb019/emb019_slice3_image.tif"
+    "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb019-022-029_images/emb022/emb022_slice2_image.tif"
+    "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb019-022-029_images/emb029/emb029_slice2_image.tif"
 )
 
 # Array of loupe-alignment paths
 declare -a LoupeAlignments=(
-    "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb020-021_images/images_emb020-021/emb021/embryo021_cytassist_alignment.json"
-    "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb020-021_images/images_emb020-021/emb020/embryo020_cytassist_alignment.json"
-    "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb019-022-029-177_images/emb019/emb019_cytassist_alignment.json"
-    "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb019-022-029-177_images/emb022/emb022_cytassist_alignment.json"
-    "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb019-022-029-177_images/emb029/emb029_cytassist_alignment.json"
+    "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb020-021_images/images_emb020-021/emb021/emb021_cytassist_alignment.json"
+    "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb020-021_images/images_emb020-021/emb020/emb020_cytassist_alignment.json"
+    "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb019-022-029_images/emb019/emb019_cytassist_alignment.json"
+    "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb019-022-029_images/emb022/emb022_cytassist_alignment.json"
+    "/c4/home/erojas/data/sptr/spatialtranscriptomics/images/RhMa_emb019-022-029_images/emb029/emb029_cytassist_alignment.json"
 )
 
 # Array of slide values
