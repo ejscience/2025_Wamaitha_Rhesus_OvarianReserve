@@ -12,7 +12,9 @@ The primate ovarian reserve is established during late fetal development and con
 
 
 ## Data
-Spatial transcriptomic data used in this repository and in the manuscript has been deposited in Zenodo at the following link: [insert link]. scRNA-seq data used in this manuscript has been deposited at GEO under accession number [GSE263989](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi). 
+Rhesus macaque spatial transcriptomic datasets generated for this project are available at Zenodo at the following link: [insert link]. scRNA-seq datasets generated for this project are available at GEO under accession number [GSE263989](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE263989). 
+
+The cynomolgus macaque scRNA-seq datasets included were previously published and are available at GEO ([GSE160043](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE160043), [GSE194264](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE194264), [GSE149629](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE149629)) or Zenodo ([6918355](https://zenodo.org/records/6918355)).
 
 
 ## Overview
@@ -25,8 +27,16 @@ This repository details the code required to replicate the transcriptomics analy
   ├── README.md
 ├── CosMX/
 │   ├── Analysis_emb020.R
-│   └── Analysis_emb021.R
-│   └── Session_Info
+│   ├── Analysis_emb021.R
+│   ├── Session_Info
+├── Chromium/
+│   ├── Analysis_Cyno.R
+│   ├── Analysis_Rhesus.R
+│   ├── Processing_Rhesus.R
+│   ├── Session_Info
+├── VisiumHD/
+│   ├── Analysis_VisiumHD.R
+│   ├── Session_Info
 ├── Visium_DEGanalysis/
 │   └── Comparison/
 │       ├── Ovary_emb031_vs_020_021.R
@@ -37,23 +47,23 @@ This repository details the code required to replicate the transcriptomics analy
 │       ├── Testis_emb019_vs_Ovary_emb020_021.R
 │       ├── Testis_emb022_vs_Ovary_emb032_031.R
 │       ├── Testis_emb029_vs_Ovary_emb020_021.R
-│   └── FilteredProbesFullRun.Rmd
-│   └── Ovary_emb020.R
-│   └── Ovary_emb021.R
-│   └── Ovary_emb031.R
-│   └── Ovary_emb032.R
-│   └── Session_Info
-│   └── Testis_emb019.R
-│   └── Testis_emb022.R
-│   └── Testis_emb029.R
+│   ├── FilteredProbesFullRun.Rmd
+│   ├── Ovary_emb020.R
+│   ├── Ovary_emb021.R
+│   ├── Ovary_emb031.R
+│   ├── Ovary_emb032.R
+│   ├── Session_Info
+│   ├── Testis_emb019.R
+│   ├── Testis_emb022.R
+│   ├── Testis_emb029.R
 ├── Visium_SpaceRanger/
 │   └── RhesusMacaqueProbeLists/
 │       ├── filtered.probes.csv
 │       ├── FRP_Human_probes_on_Macaca_mulatta.mixed_multiprobe_genes.csv
 │       ├── FRP_Human_probes_on_Macaca_mulatta.multiple_hits.csv
 │       ├── FRP_Human_probes_on_Macaca_mulatta.no_hit.csv
-│       └── FRP_Human_probes_on_Macaca_mulatta.single_hit.csv
-│       └── Visium_Human_Transcriptome_Probe_Set_v2.0_GRCh38-2020-A.csv
+│       ├── FRP_Human_probes_on_Macaca_mulatta.single_hit.csv
+│       ├── Visium_Human_Transcriptome_Probe_Set_v2.0_GRCh38-2020-A.csv
 │   ├── MakingFilteredProbes.sh
 │   ├── Session_Info
 │   ├── VisiumHD_submission.sh
@@ -66,7 +76,7 @@ This repository details the code required to replicate the transcriptomics analy
 ## Visium_SpaceRanger
 
 The `RhesusMacaqueProbeLists` folder contains the results of the in silico analyisis provided by 10x Genomics, which compares the 10x Visium Human Panel probe set to predicted targets in the rhesus macaque:
-
+  
 - Whole probe set: `Visium_Human_Transcriptome_Probe_Set_v2.0_GRCh38-2020-A.csv`
 - Single hit (on target): `FRP_Human_probes_on_Macaca_mulatta.single_hit.csv`
 - Mixed multi-probe hits (some on target single hits, some off target): `FRP_Human_probes_on_Macaca_mulatta.mixed_multiprobe_genes.csv`
@@ -87,7 +97,19 @@ For DEG analysis to compare gonadal regions to mesonephros or adrenal regions in
 
 ## CosMx
 
-Analysis pipelines for the two W6 ovary samples processed on the Nanostring CosMx platform using the 1k Human Gene Panel - see manuscript Methods for additional details. Associated with Fig. 2C and S3E.
+Analysis pipelines for the two W6 ovary samples processed on the Nanostring CosMx platform using the 1k Human Gene Panel - see manuscript Methods for additional details.  Associated with Fig. 2C and S3E.
+
+
+## Chromium
+
+Pre-processing steps for the W8 - W19 rhesus macaque scRNA seq samples are detailed in `Processing_Rhesus.R`; follow the steps in `Analysis_Rhesus.R` for the Seurat workflow and downstream analysis. 
+
+For the analysis of the published cynomolgus macaque datasets, follow the steps in `Analysis_Cyno.R` to combine, process and integrate the datasets (Harmony integration) as well as downstream analysis. Associated with Fig. S4F-G and S5C-E.
+
+
+## VisiumHD
+
+Analysis pipeline for the W19 ovary sample processed on the Visium HD CytAssist platform - see manuscript Methods for additional details.  Associated with Fig. 4C, 5A, S6E and S6F.
 
 
 ## Contact
@@ -95,5 +117,6 @@ Analysis pipelines for the two W6 ovary samples processed on the Nanostring CosM
 For any questions or further information, feel free to reach out to the project lead.
 
 ---
-
-*Updated on: May 13 2025*
+  
+  *Updated on: May 19 2025*
+  
