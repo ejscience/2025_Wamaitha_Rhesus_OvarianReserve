@@ -13,7 +13,7 @@ library(viridis)
 library(khroma)
 
 -------------------------------
-# Import Option 1 - From count matrix (.txt) - GSE149629-------------------------------
+# Import Option 1 - From count matrix (.txt) - GSE149629
 ## Create Seurat object, identify each sample/replicate from barcode suffix data
 cynoT2 <- read.table("~/Box/Genomics/10x datasets/Zhao_E84_E116/GSE149629_Count_matrix.txt.gz")
 
@@ -28,9 +28,8 @@ cyno[["orig.ident"]] <- Idents(cyno)
 
 saveRDS(cyno, "Zhao_T2.rds")
 
-
-# Import Option 2 - From 10x export files (barcodes.tsv, features.tsv, matrix.mtx) - GSE194264, GSE160043 
 --------------------------------
+# Import Option 2 - From 10x export files (barcodes.tsv, features.tsv, matrix.mtx) - GSE194264, GSE160043 
 ## Create individual Seurat objects from each sample/replicate
 data <- Read10X(data.dir = "~/Box/Genomics/10x datasets/Mizuta_W18_filtered/")
 W18 <- CreateSeuratObject(counts = data, project = "Mizuta_W18")
@@ -41,8 +40,8 @@ any(rownames(data)=="")
 which(rownames(data)=="")
 rownames(data)[6114] <- 0
 
-
-# Import Option 3 - From h5 files (.h5) - Zenodo 6918355  ------------------------------
+--------------------------------
+# Import Option 3 - From h5 files (.h5) - Zenodo 6918355 
 ## Create Seurat object, identify each sample/replicate from barcode suffix data
 ## For MacOS, install hdf5 dependencies in Terminal - first install Homebrew + Xcode command line tools, then MacPorts (https://www.macports.org/install.php)
 sudo port install hdf5
@@ -53,7 +52,8 @@ data <- Read10X_h5("~/Box/Genomics/10x datasets/Chen_E52/monkey_OV_E52_filtered_
 E52 <- CreateSeuratObject(counts = data, project = "Chen_E52")
 ## Repeat for each sample/replicate
 
-## For options 2 and 3 - merge sample Seurat objects into one larger object dataset -------------------------------
+--------------------------------
+## For options 2 and 3 - merge sample Seurat objects into one larger object dataset
 cynoT2 <- merge(W8_1, y = c(W8_2, W10, W12, W16_1, W16_2, W18), add.cell.ids = c("W8_1","W8_2", "W10", "W12", "W16_1", "W16_2", "W18"), project = "Mizuta2022", merge.data = TRUE)
 
 cynoT2
@@ -66,8 +66,8 @@ cyno_merge[["sample"]] <- Idents(cyno_merge)
 saveRDS(cynoT2, "Mizuta_T2.rds")
 ## Repeat for each sample/replicate to merge into datasets
 
-
-# Merge all datasets ---------------------------------------------------
+--------------------------------
+# Merge all datasets
 mT2 <- readRDS("Mizuta_T2.rds")
 zT2 <- readRDS("Zhao_T2.rds")
 cT1 <- readRDS("Chen_T1.rds")
@@ -81,7 +81,7 @@ head(cyno_combined@meta.data
 saveRDS(cyno_combined, "Cyno_merge.rds")
 
 ------------------------------------     
-# Pre-process data - QC mito + ribo, cell cycle ---------------------- 
+# Pre-process data - QC mito + ribo, cell cycle  
 ## QC - percent mito, percent ribo
 ## Check mito genes
 grep ("^COX3", rownames(cyno_combined[["RNA"]]),value = T)
