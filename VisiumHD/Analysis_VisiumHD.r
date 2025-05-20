@@ -163,7 +163,7 @@ nUMI <- OvaryONPRC017$nCount_RNA
 levels(cluster) <- gsub("/", "-", levels(cluster))
 cluster <- droplevels(cluster)
 
-# create the RCTD object_meioticerence object_meiotic
+# create the RCTD object_meiotic
 reference <- Reference(counts, cluster, nUMI)
 
 counts_hd <- object_meiotic[["Spatial.008um"]]$counts
@@ -204,7 +204,7 @@ nUMI <- OvaryONPRC017$nCount_RNA
 levels(cluster) <- gsub("/", "-", levels(cluster))
 cluster <- droplevels(cluster)
 
-# create the RCTD object_granulosaerence object_granulosa
+# create the RCTD object_granulosa
 reference <- Reference(counts, cluster, nUMI)
 
 counts_hd <- object_granulosa[["Spatial.008um"]]$counts
@@ -229,3 +229,36 @@ Idents(object_granulosa) <- "first_type_granulosa"
 
 p <- SpatialDimPlot(object_granulosa)
 p
+
+
+#Plot High resultion cells
+localdir <- "/Users/emb017/"
+object <- Load10X_Spatial(data.dir = localdir, bin.size = c(8))
+
+# Setting default assay
+Assays(object)
+DefaultAssay(object) <- "Spatial.008um"
+
+#Remove bins out of tissue and assign the HR cell types
+object@meta.data[["space_clusters"]] <- Only_tissue_HR$Good_HR_cells
+Idents(object) <- "space_clusters"
+object <- subset(x = object, idents = c(0), invert = TRUE)
+
+cols <- c("PG2" = "#FFFF00")
+SpatialDimPlot(object, cols = cols)
+
+cols <- c("PG1.5" = "#FFFF00")
+SpatialDimPlot(object, cols = cols)
+
+cols <- c("Theca-like t0" = "#FFFF00")
+SpatialDimPlot(object, cols = cols)
+
+cols <- c("Theca-like t2" = "#FFFF00")
+SpatialDimPlot(object, cols = cols)
+
+
+cols <- c("PG1.5" = "#FFFF00", "PG2" = "red")
+SpatialDimPlot(object, cols = cols)
+
+cols <- c("Theca-like t0" = "#FFFF00", "Theca-like t2" = "red")
+SpatialDimPlot(object, cols = cols)
