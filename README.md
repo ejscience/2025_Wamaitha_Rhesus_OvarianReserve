@@ -12,9 +12,9 @@ The primate ovarian reserve is established during late fetal development and con
 
 
 ## Data
-Rhesus macaque spatial transcriptomic datasets generated for this project are available at Zenodo at the following link: [insert link]. scRNA-seq datasets generated for this project are available at GEO under accession number [GSE263989](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE263989). 
+Rhesus macaque scRNA-seq data generated for this project is available at GEO under accession number [GSE263989](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE263989). Spatial transcriptomic data will be available at Zenodo [10.5281/zenodo.15477421].
 
-The cynomolgus macaque scRNA-seq datasets included were previously published and are available at GEO ([GSE160043](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE160043), [GSE194264](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE194264), [GSE149629](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE149629)) or Zenodo ([6918355](https://zenodo.org/records/6918355)).
+The cynomolgus macaque scRNA-seq datasets included were previously published and are available at GEO ([GSE160043](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE160043), [GSE194264](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE194264), [GSE149629](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE149629)) or Zenodo ([10.5281/zenodo.6918355](https://zenodo.org/records/6918355)).
 
 
 ## Overview
