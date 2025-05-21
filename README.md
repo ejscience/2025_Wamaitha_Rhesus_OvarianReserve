@@ -18,7 +18,7 @@ The cynomolgus macaque scRNA-seq datasets included were previously published and
 
 
 ## Overview
-This repository details the code required to replicate the transcriptomics analyses described in the manuscript - please also see the associated Methods sections in the manuscript.
+This repository details the code required to replicate the transcriptomics analyses described in the manuscript - please also see the associated Methods sections.
 
 
 ## Files
@@ -83,16 +83,16 @@ The `RhesusMacaqueProbeLists` folder contains the results of the in silico analy
 - Multiple hits (none on target): `FRP_Human_probes_on_Macaca_mulatta.multiple_hits.csv`
 - No hits: `FRP_Human_probes_on_Macaca_mulatta.no_hit.csv`
 
-To begin analysis, follow `MakingFilteredProbes.sh` to combine the single hit probe list with the subset of mixed multi-probes that are on target single hits; this generates the `filtered.probes.csv` output file.
+To begin analysis, we followed `MakingFilteredProbes.sh` to combine the single hit probe list with the subset of mixed multi-probes that are on target single hits; this generates the `filtered.probes.csv` output file.
 
-To run spaceranger with the filtered probe list, follow `Visium_submission.sh` for the W5 and W6 samples analysed with Visium CytAssist. Follow `VisiumHD_submission.sh` for the W19 sample analysed with the Visium HD CytAssist platform.
+To run spaceranger with the filtered probe list, we followed `Visium_submission.sh` for the W5 and W6 samples analysed with Visium CytAssist, and `VisiumHD_submission.sh` for the W19 sample analysed with the Visium HD CytAssist platform.
 
 
 ## Visium_DEGanalysis
 
 For the W5 and W6 samples, `FilteredProbesFullRun.Rmd` outlines the Seurat analysis workflow and sample visualisation steps used to generate Fig. 2A, 2B, S3C and S3D, and lists the required libraries and dependencies. Please note that the background H&E tissue images were converted from RGB to black and white using ImageJ.
 
-For DEG analysis to compare gonadal regions to mesonephros or adrenal regions in the same tissue section, follow `Ovary_emb020.R` (for sample ONPRC020) or the equivalent .R file for the sample of interest (see Gonad sample key in Supplementary Materials for alternate IDs). For DEG analysis comparing gonadal regions _between_ samples, see relevant .R files in the 'Comparison' folder.
+DEG analysis to compare gonadal regions to mesonephros or adrenal regions in the same tissue section is outlined in `Ovary_emb020.R` (for sample ONPRC020) or the equivalent .R file for the sample of interest (see Gonad sample key in Supplementary Materials for alternate IDs). For DEG analysis comparing gonadal regions _between_ samples, see relevant .R files in the 'Comparison' folder.
 
 
 ## CosMx
@@ -102,9 +102,9 @@ Analysis pipelines for the two W6 ovary samples processed on the Nanostring CosM
 
 ## Chromium
 
-Pre-processing steps for the W8 - W19 rhesus macaque scRNA seq samples are detailed in `Processing_Rhesus.R`; follow the steps in `Analysis_Rhesus.R` for the Seurat workflow and downstream analysis. 
+Pre-processing steps for the W8 - W19 rhesus macaque scRNA seq samples are detailed in `Processing_Rhesus.R`; we followed the steps in `Analysis_Rhesus.R` for the Seurat workflow and downstream analysis. 
 
-For the analysis of the published cynomolgus macaque datasets, follow the steps in `Analysis_Cyno.R` to combine, process and integrate the datasets (Harmony integration) as well as downstream analysis. Associated with Fig. S4F-G and S5C-E.
+For the analysis of the published cynomolgus macaque datasets, we followed the steps in `Analysis_Cyno.R` to combine, process and integrate the datasets (Harmony integration) as well as downstream analysis. Associated with Fig. S4F-G and S5C-E.
 
 
 ## VisiumHD
@@ -114,9 +114,9 @@ Analysis pipeline for the W19 ovary sample processed on the Visium HD CytAssist 
 
 ## Contact
 
-For any questions or further information, feel free to reach out to the project lead.
+For any questions or further information, reach out to the project lead.
 
 ---
   
-  *Updated on: May 19 2025*
+  *Updated on: May 21 2025*
   
