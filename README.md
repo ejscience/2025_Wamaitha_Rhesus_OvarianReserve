@@ -33,7 +33,6 @@ This repository details the code required to replicate the transcriptomics analy
 │   ├── Analysis_Cyno.R
 │   ├── Analysis_Rhesus.R
 │   ├── Processing_Rhesus.R
-│   ├── Session_Info
 ├── VisiumHD/
 │   ├── Analysis_VisiumHD.R
 │   ├── Session_Info
